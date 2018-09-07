@@ -47,6 +47,7 @@ public abstract class DB {
    * Properties for configuring this DB.
    */
   private Properties properties = new Properties();
+  protected int clientThreadId = -1;
 
   /**
    * Set the properties for this DB.
@@ -132,4 +133,8 @@ public abstract class DB {
    * @return The result of the operation.
    */
   public abstract Status delete(String table, String key);
+
+  public void setClientThreadId(int threadId) {
+    this.clientThreadId = threadId;
+  }
 }
